@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você | Um Buquê Especial</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <div class="step active" id="step-1">
+            <h1>Olá, meu bem</h1>
+            <p>Quero montar algo especial para você.<br>Quais desses sentimentos mais combinam com você hoje? <br><small>(Escolha até 3)</small></p>
+            
+            <div class="rose-grid" id="rose-options">
+                <div class="rose-option" data-type="Vermelha" onclick="selectRose(this)">
+                    <span class="rose-icon">🌹</span><span>Paixão (Vermelha)</span>
+                </div>
+                <div class="rose-option" data-type="Branca" onclick="selectRose(this)">
+                    <span class="rose-icon">🌸</span><span>Paz (Branca)</span>
+                </div>
+                <div class="rose-option" data-type="Rosa" onclick="selectRose(this)">
+                    <span class="rose-icon">🌷</span><span>Carinho (Rosa)</span>
+                </div>
+                <div class="rose-option" data-type="Champanhe" onclick="selectRose(this)">
+                    <span class="rose-icon">🌼</span><span>Admiração (Champanhe)</span>
+                </div>
+                 <div class="rose-option" data-type="Azul" onclick="selectRose(this)">
+                    <span class="rose-icon">💠</span><span>Mistério (Azul)</span>
+                </div>
+            </div>
+
+            <button class="btn-next" id="btn-step-1" onclick="goToStep(2)" disabled>Continuar ✨</button>
+        </div>
+
+        <div class="step" id="step-2">
+            <h2>Personalizando...</h2>
+            <p>Escolha a tonalidade perfeita para os seus corações.</p>
+            <div id="dynamic-color-selection"></div>
+            <button class="btn-next" onclick="goToStep(3)">Ficou Lindo ❤️</button>
+        </div>
+
+        <div class="step" id="step-3">
+            <h2>O toque final</h2>
+            <p>Qual cor de papel e laço combina mais?</p>
+            <div class="color-picker-container" id="wrapper-colors">
+                <div class="color-circle" style="background: #f8cdda" onclick="selectWrapper('#f8cdda', this)"></div>
+                <div class="color-circle" style="background: #e2e2e2" onclick="selectWrapper('#e2e2e2', this)"></div>
+                <div class="color-circle" style="background: #d4a5a5" onclick="selectWrapper('#d4a5a5', this)"></div>
+                <div class="color-circle" style="background: #a8d8ea" onclick="selectWrapper('#a8d8ea', this)"></div>
+                <div class="color-circle" style="background: #fff5e1" onclick="selectWrapper('#fff5e1', this)"></div>
+            </div>
+            <button class="btn-next" id="btn-step-3" onclick="goToFinal()" disabled>Ver Surpresa 🎁</button>
+        </div>
+
+        <div class="step" id="step-final">
+            <h1>Para Você...</h1>
+            <div class="bouquet-container" id="bouquet-display">
+                <div class="wrapper" id="final-wrapper"></div>
+            </div>
+            <div class="final-msg">"Cada detalhe foi pensado com carinho."</div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
